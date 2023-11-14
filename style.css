@@ -1,0 +1,20 @@
+.cardArea {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70rem;
+}
+
+.card-header-style {
+    background-color: #4285F4;
+    color: #FFFFFF;
+}
+
+.row-margin {
+    margin-top: -20px;
+}
+
+.card-margin {
+    margin-top: 2rem;
+}

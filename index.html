@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EC Tools
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="navbar">
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">EC</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">ECL</button>
+          </li>
+        </ul>
+      </div> -->
+      <div class="cardArea">
+        <div class="card text-center shadow">
+          <div class="card-header card-header-style">
+            Enter PII information
+          </div>
+          <div class="card-body">
+            <div class="row g-5 justify-content-md-center">
+              <div class="col-md-6">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+                <div class="invalid-feedback">
+                  Please enter valid email like example@domain.com
+                </div>
+              </div>
+              <div class="col-md-4">
+                <input type="phone" class="form-control" id="phone" placeholder="Phone Number">
+                <div class="invalid-feedback">
+                  Please enter valid phone number. <br>
+                  Valid Format: +{Country Code}{Phone Number}
+                </div>
+              </div>
+            </div>
+            <div class="row g-5 justify-content-md-center row-margin">
+              <div class="col-md-10">
+                <input type="text" class="form-control" id="em" placeholder="em Variable - Copy from network request tab">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center card-margin shadow">
+          <div class="card-header card-header-style">
+            Hashed Info - Web64 (Found in Network Tab)
+          </div>
+          <div class="card-body">
+            <div class="row g-5 justify-content-md-center">
+              <div class="col-md-6">
+                <label for="emEmailWeb64" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emEmailWeb64" placeholder="Email Hashed Web-64 Value">
+                <div class="valid-feedback">
+                  Generated hash value matches with network data
+                </div>
+                <div class="invalid-feedback">
+                  Generated hash value doesn't match the network data
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="emPhoneWeb64" class="form-label">Phone Number</label>
+                <input type="phone" class="form-control" id="emPhoneWeb64" placeholder="Phone Number Hashed Web-64 Value">
+                <div class="valid-feedback">
+                  Generated hash value matches with network data
+                </div>
+                <div class="invalid-feedback">
+                  Generated hash value doesn't match the network data
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card text-center card-margin shadow">
+          <div class="card-header card-header-style">
+            Hashed Info - SHA256 (To be uploaded in file for ECL)
+          </div>
+          <div class="card-body">
+            <div class="row g-5 justify-content-md-center">
+              <div class="col-md-6">
+                <label for="emEmailSHA256" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emEmailSHA256" placeholder="Email">
+              </div>
+              <div class="col-md-6">
+                <label for="emPhoneSHA256" class="form-label">Phone Number</label>
+                <input type="phone" class="form-control" id="emPhoneSHA256" placeholder="Phone Number">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js" integrity="sha512-t8vdA86yKUE154D1VlNn78JbDkjv3HxdK/0MJDMBUXUjshuzRgET0ERp/0MAgYS+8YD9YmFwnz6+FWLz1gRZaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.min.js" integrity="sha512-fv28nWHTcWfoN3KBd2fs+YWsirQ+L0b/iIRS7HcNDPSAwxy6oSjRrYjQ+OtJoJz0wUKsVcPYgwcZzK04KfHD0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/enc-base64.min.js" integrity="sha512-IKpu1GFk/bQ+2fOc4sXuA6lm7Rct4P7611iDBxY9LReOZ2PpwoDWWqj6GSYejUce1FLxo/d4lxAnKqGWJuBw7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="./js/hash.js"></script>
+  </body>
+</html>
